@@ -1,4 +1,4 @@
-create database football_ticket_booking_system;
+--create database football_ticket_booking_system;
 --create user table
 create table Users (
     user_id serial primary key,
@@ -54,7 +54,7 @@ select match_id,fixture,base_ticket_price from matches
 
 --Query 2
 select user_id,full_name,email from users
- where full_name like 'Tanvir%' or full_name like '%Haque%';
+ where full_name ilike 'Tanvir%' or full_name ilike '%Haque%';
 --Query 3
 select booking_id,user_id,match_id,coalesce(payment_status,'Action Required') as systematic_status from bookings
   where payment_status is null;
